@@ -6,4 +6,6 @@ ADD "./package.json" "/home/node/application/package.jaon"
 
 RUN ["npm", "install"]
 
+RUN ["npm", "rebuild", "node-sass"]
+
 CMD ["npm", "start"]
