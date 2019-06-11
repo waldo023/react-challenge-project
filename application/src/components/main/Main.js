@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import './Main.scss';
+import './Main.css';
 
 const mapStateToProps = state => ({
   temp: state.temp
