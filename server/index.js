@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 4000;
 
@@ -17,6 +19,16 @@ mongoose.connection.on('error', (err) => {
   console.log('Database error: ', err);
 });
 
+// logger
+app.use(morgan('dev'));
+
+// bodyparser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+
+// test route
 app.get('/', (req, res) => {
     console.log('Hi!');
     res.send('Hi!');
