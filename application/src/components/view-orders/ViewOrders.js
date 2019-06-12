@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Template } from '../../components';
-import './ViewOrders.css';
+import './viewOrders.css';
 
 class ViewOrders extends Component {
     render() {

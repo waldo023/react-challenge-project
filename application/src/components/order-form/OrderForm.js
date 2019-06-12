@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Template } from '../../components';
-import './OrderForm.css';
+import './orderForm.css';
 
 class OrderForm extends Component {
     render() {
