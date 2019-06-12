@@ -20,7 +20,6 @@ class ViewOrders extends Component {
     }
 
     render() {
-        console.log('orders', this.state.orders);
         return (
             <Template>
                 <div className="container-fluid">
