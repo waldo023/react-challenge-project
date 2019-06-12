@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends Component {
   state = {
@@ -18,7 +19,9 @@ class LoginForm extends Component {
           <input type="password" className="form-control" id="inputPassword"></input>
         </div>
         <div className="d-flex justify-content-center">
-          <button type="submit" className="btn btn-primary">Login</button>
+          <Link to={'/order'}>
+            <button type="submit" className="btn btn-primary">Login</button>
+          </Link>
         </div>
       </form>
     );
