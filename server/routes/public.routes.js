@@ -110,7 +110,7 @@ router.post('/delete-order', async (req, res) => {
   }
 });
 
-router.delete('/flush-database', async (req, res) => {
+router.delete('/flush-orders', async (req, res) => {
   try {
     // HITTING THIS ENDPOINT DELETES ALL ORDERS
     const deleteResponse = await Order.deleteMany({});
