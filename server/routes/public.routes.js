@@ -50,4 +50,29 @@ router.post('/add-order', async (req, res) => {
   }
 });
 
+router.post('/edit-order', async (req, res) => {
+  // expects id
+  try {
+    if (!req.body.id) {
+      res.status(400).json({ success: false, error: 'No id supplied'});
+      return;
+    }
+    const updateResponse = await Order.updateOne({
+      _id: req.body.id
+    }, {
+      ordered_by: req.body.ordered_by,
+      order_item: req.body.order_item,
+      quantity: req.body.quantity,
+    });
+
+    if (!updateResponse || !updateResponse.nModified) {
+      res.status(400).json({ success: false, error: 'Error in database while updating' });
+      return;
+    }
+    res.status(200).json({ success: true });
+  } catch(error) {
+    res.status(500).json({ success: false, error });
+  }
+});
+
 module.exports = router;
