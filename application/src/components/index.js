@@ -1,4 +1,8 @@
-import Main from './main/Main';
-import Login from './login/Login';
+import Login from './login/login';
+import Main from './main/main';
+import Nav from './nav/Nav';
+import OrderForm from './order-form/orderForm';
+import Template from './common/template';
+import ViewOrders from './view-orders/viewOrders';
 
-export { Main, Login };
+export { Login, OrderForm, Main, Nav, Template, ViewOrders };
