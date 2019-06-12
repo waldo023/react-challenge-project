@@ -31,11 +31,11 @@ Kitematic can also be useful for looking at the logs for one specific container,
 
 ## Endpoint testing
 
-The following backend endpoints can be hit via Postman for testing purposes:
+The following backend endpoints can be queried via Postman for testing purposes:
 
 - Login (POST) - `(server addr)/api/login` (Expects name/password in request body)
 - Current Orders (GET) - `(server addr)/api/current-orders`
 - Add Order (POST) - `(server addr)/api/add-order` (Expects ordered_by, quantity, menu_item in request body)
 - Delete Order (POST) - `(server addr)/api/delete-order` (Expects id in request body)
 - Edit Order (POST) - `(server addr)/api/edit-order` (Expects id in request body. Will look for ordered_by, quantity, menu_item.)
-- Flush Orders (DELETE) - `(server addr)/api/flush-orders` (This deletes all currnt orders in the DB)
+- Flush Orders (DELETE) - `(server addr)/api/delete-all` (This deletes all current orders in the DB)

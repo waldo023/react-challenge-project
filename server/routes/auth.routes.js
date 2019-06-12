@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/login', (req, res) => {
   try {
     if (!req.body || !req.body.email || !req.body.password) {
-      res.status(400).json({ success: false, error: 'Bad login information' });
+      res.status(401).json({ success: false, error: 'Bad login information' });
       return;
     }
     res.status(200).json({ success: true, email: req.body.email, token: '12345luggage' });
