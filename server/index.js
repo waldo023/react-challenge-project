@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
+const authRoutes = require('./routes/auth.routes');
 const routes = require('./routes/public.routes');
 const app = express();
 const port = 4000;
@@ -40,6 +41,7 @@ app.use((req, res, next) => {
 });
 
 // use routes
+app.use('/api', authRoutes);
 app.use('/api', routes);
 
 // test route
