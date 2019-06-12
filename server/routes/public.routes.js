@@ -110,12 +110,12 @@ router.post('/delete-order', async (req, res) => {
   }
 });
 
-router.delete('/flush-orders', async (req, res) => {
+router.delete('/delete-all', async (req, res) => {
   try {
     // HITTING THIS ENDPOINT DELETES ALL ORDERS
     const deleteResponse = await Order.deleteMany({});
     if (!deleteResponse) {
-      res.status(400).json({ success: false, error: 'Error flushing orders.' });
+      res.status(400).json({ success: false, error: 'Error deleting all orders.' });
       return;
     }
     res.status(200).json({ success: true, deleted: deleteResponse.n });
