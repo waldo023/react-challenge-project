@@ -1,7 +1,6 @@
 import { LOGIN, LOGOUT } from './types';
 
 const finishLogin = (email, token) => {
-    console.log('em', email, token);
     return {
         type: LOGIN,
         payload: {
@@ -25,7 +24,6 @@ export const loginUser = (email, password) => {
         }).then(response => response.json())
         .then(response => {
             if (response.success) {
-                console.log('login resp', response)
                 dispatch(finishLogin(response.email, response.token));
             }
         })
