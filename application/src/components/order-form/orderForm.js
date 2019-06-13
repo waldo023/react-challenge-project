@@ -2,21 +2,41 @@ import React, { Component } from 'react';
 import { Template } from '../../components';
 import './orderForm.css';
 
+const ADD_ORDER_URL = "http://localhost:4000/api/add-order"
+
 class OrderForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            item: "",
-            quantity: 1
+            order_item: "",
+            quantity: "1"
         }
     }
 
     menuItemChosen(event) {
-        this.setState({ item: event.target.value });
+        this.setState({ order_item: event.target.value });
     }
 
     menuQuantityChosen(event) {
         this.setState({ quantity: event.target.value });
+    }
+
+    submitOrder(event) {
+        event.preventDefault();
+        if (this.state.order_item === "") return;
+        fetch(ADD_ORDER_URL, {
+            method: 'POST',
+            body: JSON.stringify({
+                order_item: this.state.order_item,
+                quantity: this.state.quantity
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(response => console.log("Success", JSON.stringify(response)))
+        .catch(error => console.error(error));
     }
 
     render() {
@@ -26,7 +46,7 @@ class OrderForm extends Component {
                     <form>
                         <label className="form-label">I'd like to order...</label><br />
                         <select 
-                            value={this.state.item} 
+                            value={this.state.order_item} 
                             onChange={(event) => this.menuItemChosen(event)}
                             className="menu-select"
                         >
@@ -45,7 +65,7 @@ class OrderForm extends Component {
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select>
-                        <button type="button" className="order-btn">Order It!</button>
+                        <button type="button" className="order-btn" onClick={(event) => this.submitOrder(event)}>Order It!</button>
                     </form>
                 </div>
             </Template>
