@@ -46,7 +46,6 @@ class OrderForm extends Component {
     }
 
     render() {
-        console.log('props', this.props);
         return (
             <Template>
                 <div className="form-wrapper">
