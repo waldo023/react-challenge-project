@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'; 
 import { Link } from 'react-router-dom';
+import { loginUser } from '../../../redux/actions/authActions'
+
+const mapActionsToProps = dispatch => ({
+  commenceLogin(email, password) {
+    dispatch(loginUser(email, password))
+  }
+})
 
 class LoginForm extends Component {
   state = {
-    login: "",
+    email: "",
     password: "",
+  }
+
+  login(e) {
+    e.preventDefault();
+    this.props.commenceLogin(this.state.email, this.state.password);
+    this.props.onLogin();
+  }
+
+  onChange(key, val) {
+    this.setState({ [key]: val });
   }
 
   render() {
@@ -12,20 +30,20 @@ class LoginForm extends Component {
       <form>
         <div className="form-group">
           <label htmlFor="inputEmail">Email</label>
-          <input type="email" className="form-control" id="inputEmail" placeholder="test@test.com"></input>
+          <input type="text" className="form-control"  placeholder="test@test.com" value={this.state.email} onChange={e => this.onChange('email', e.target.value)}></input>
         </div>
         <div className="form-group">
           <label htmlFor="inputPassword">Password</label>
-          <input type="password" className="form-control" id="inputPassword"></input>
+          <input type="password" className="form-control" id="inputPassword" value={this.state.password} onChange={e => this.onChange('password', e.target.value)}></input>
         </div>
         <div className="d-flex justify-content-center">
-          <Link to={'/order'}>
-            <button type="submit" className="btn btn-primary">Login</button>
-          </Link>
+          {/* <Link to={'/order'}> */}
+            <button onClick={e => this.login(e)} type="submit" className="btn btn-primary">Login</button>
+          {/* </Link> */}
         </div>
       </form>
     );
   }
 }
 
-export default LoginForm;
+export default connect(null, mapActionsToProps)(LoginForm);
