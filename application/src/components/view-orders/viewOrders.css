@@ -14,7 +14,8 @@
 
 .view-order-left-col {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .view-order-middle-col {
