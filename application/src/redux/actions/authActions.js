@@ -1,6 +1,7 @@
 import { LOGIN, LOGOUT } from './types';
 
 const finishLogin = (email, token) => {
+    console.log('em', email, token);
     return {
         type: LOGIN,
         payload: {
