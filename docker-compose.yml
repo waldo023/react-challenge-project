@@ -10,7 +10,8 @@ services:
     depends_on:
       - server
     volumes:
-    - './application:/home/node/application'
+    - ./application:/home/node/application
+    - home/node/application/node_modules
 
   server:
     build: './server'
@@ -22,7 +23,7 @@ services:
     - database
     volumes:
     - ./server:/home/node/server
-  
+    - home/node/server/node_modules
   database:
     image: "mongo"
     networks:
