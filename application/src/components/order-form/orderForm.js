@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { Template } from '../../components';
+import { connect } from 'react-redux';
 import './orderForm.css';
 
 const ADD_ORDER_URL = "http://localhost:4000/api/add-order"
+
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+})
 
 class OrderForm extends Component {
     constructor(props) {
@@ -28,7 +33,8 @@ class OrderForm extends Component {
             method: 'POST',
             body: JSON.stringify({
                 order_item: this.state.order_item,
-                quantity: this.state.quantity
+                quantity: this.state.quantity,
+                ordered_by: this.props.auth.email || 'Unknown!',
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -73,4 +79,4 @@ class OrderForm extends Component {
     }
 }
 
-export default OrderForm;
+export default connect(mapStateToProps, null)(OrderForm);

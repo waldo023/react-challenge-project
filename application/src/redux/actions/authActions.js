@@ -24,7 +24,6 @@ export const loginUser = (email, password) => {
         }).then(response => response.json())
         .then(response => {
             if (response.success) {
-                console.log('login resp', response)
                 dispatch(finishLogin(response.email, response.token));
             }
         })

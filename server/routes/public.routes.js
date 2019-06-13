@@ -36,7 +36,8 @@ router.post('/add-order', async (req, res) => {
   
     const orderObj = new Order({
       order_item: req.body.order_item,
-      quantity: req.body.quantity
+      quantity: req.body.quantity,
+      ordered_by: req.body.ordered_by,
     });
   
     const dbResponse = await orderObj.save();
