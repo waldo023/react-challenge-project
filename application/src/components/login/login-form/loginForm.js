@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
-import { Link } from 'react-router-dom';
 import { loginUser } from '../../../redux/actions/authActions'
 
 const mapActionsToProps = dispatch => ({
@@ -37,9 +36,7 @@ class LoginForm extends Component {
           <input type="password" className="form-control" id="inputPassword" value={this.state.password} onChange={e => this.onChange('password', e.target.value)}></input>
         </div>
         <div className="d-flex justify-content-center">
-          {/* <Link to={'/order'}> */}
             <button onClick={e => this.login(e)} type="submit" className="btn btn-primary">Login</button>
-          {/* </Link> */}
         </div>
       </form>
     );

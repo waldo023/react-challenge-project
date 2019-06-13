@@ -12,10 +12,6 @@ const finishLogin = (email, token) => {
 
 export const loginUser = (email, password) => {
     return (dispatch) => {
-        const reqBody = {
-            email,
-            password,
-        }
         fetch('http://localhost:4000/api/login', {
             method: 'POST',
             body: JSON.stringify({
