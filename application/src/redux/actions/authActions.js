@@ -1,4 +1,5 @@
 import { LOGIN, LOGOUT } from './types';
+import { SERVER_IP } from '../../private'
 
 const finishLogin = (email, token) => {
     return {
@@ -12,7 +13,7 @@ const finishLogin = (email, token) => {
 
 export const loginUser = (email, password) => {
     return (dispatch) => {
-        fetch('http://localhost:4000/api/login', {
+        fetch(`${SERVER_IP}/api/login`, {
             method: 'POST',
             body: JSON.stringify({
                 email,

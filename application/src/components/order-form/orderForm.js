@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Template } from '../../components';
 import { connect } from 'react-redux';
+import { SERVER_IP } from '../../private';
 import './orderForm.css';
 
-const ADD_ORDER_URL = "http://localhost:4000/api/add-order"
+const ADD_ORDER_URL = `${SERVER_IP}/api/add-order`
 
 const mapStateToProps = (state) => ({
     auth: state.auth,

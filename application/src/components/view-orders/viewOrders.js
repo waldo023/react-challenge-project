@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Template } from '../../components';
+import { SERVER_IP } from '../../private';
 import './viewOrders.css';
 
 class ViewOrders extends Component {
@@ -8,7 +9,7 @@ class ViewOrders extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4000/api/current-orders')
+        fetch(`${SERVER_IP}/api/current-orders`)
             .then(response => response.json())
             .then(response => {
                 if(response.success) {
