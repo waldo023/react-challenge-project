@@ -6,7 +6,7 @@ You will begin by creating a fork of this repository to your own Github account.
 
 Once you have created your fork, review the Issues labeled `challenge task` [HERE](https://github.com/Shift3/react-challenge-project/issues?q=is%3Aissue+is%3Aopen+label%3A%22challenge+task%22). Shift3's standard for branching is as follows:
 
-- Maintain a `master` and development (`dev`) branch on the repository
+- Maintain a `master` and development (`dev`) branch on your fork
 - For each new feature (issue), create a branch based off of your `dev` branch
     - Once your feature has been completed, submit a Pull Request from your feature branch to your `dev` branch
     - If you have a reviewer on your repository, once your Pull Request has been approved, merge your feature branch back into `dev`
