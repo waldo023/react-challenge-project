@@ -7,15 +7,12 @@ You will begin by creating a fork of this repository to your own Github account.
 Once you have created your fork, review the Issues labeled `challenge task` [HERE](https://github.com/Shift3/react-challenge-project/issues?q=is%3Aissue+is%3Aopen+label%3A%22challenge+task%22). Shift3's standard for branching is as follows:
 
 - Maintain a `master` and development (`dev`) branch on your fork
-- For each new feature (issue), create a branch based off of your `dev` branch
-    - Once your feature has been completed, submit a Pull Request from your feature branch to your `dev` branch
-    - If you have a reviewer on your repository, once your Pull Request has been approved, merge your feature branch back into `dev`
-    - Otherwise, submit the Pull Request and merge it into your `dev` branch
-- Once the work has been completed, create a Pull Request from the working branch to your `master` branch and reference the Issue you are working on. These open PRs will be the final submission which Shift3 will review.
+- For each feature/task (Issue), create a new branch based off of your `dev` branch
+- Once a task has been completed, create a Pull Request from the working branch to your `master` branch and reference the Issue you are working on. **These open PRs will be the final submission which Shift3 will review.**
 
 Once you are ready to submit your work, send an email to your Shift3 contact with a link to your fork.
 
-Please apply the following Shift3 Standard Practices as you work on this project:
+**Please apply the following Shift3 Standard Practices as you work on this project:**
 - Each unit of work (Issue) should be completed within its own [branch](https://github.com/Shift3/standards-and-practices/blob/master/standards/branching.md).
 - Use Karma-style formatting for your [Git Commit Messages](https://github.com/Shift3/standards-and-practices/blob/master/standards/commits.md).
 - Generate a PR for each unit of work (Issue) which is completed. Keep the scope of these PRs as narrow as possible. Try not to create PRs which rely on or contain code from previous PRs unless there is truly a dependency between the two units of work.
