@@ -1,17 +1,19 @@
-import React, { useState, useSelector } from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Template } from '../../components';
 import { SERVER_IP } from '../../private';
-import './orderform.css';
+import './orderForm.css';
 
 const ADD_ORDER_URL = `${SERVER_IP}/api/add-order`;
 
-function OrderForm(props) {
+export default function OrderForm(props) {
     const [orderItem, setOrderItem] = useState("");
     const [quantity, setQuantity] = useState("1");
 
     const menuItemChosen = (event) => setOrderItem(event.target.value);
     const menuQuantityChosen = (event) => setQuantity(event.target.value);
 
-    const auth = useSelector(state => state.auth);
+    const auth = useSelector((state) => state.auth);
 
     const submitOrder = (event) => {
         event.preventDefault();
@@ -20,8 +22,8 @@ function OrderForm(props) {
             method: 'POST',
             body: JSON.stringify({
                 order_item: orderItem,
-                quantity=,
-                ordered_by: props.auth.email || 'Unknown!',
+                quantity,
+                ordered_by: auth.email || 'Unknown!',
             }),
             headers: {
                 'Content-Type': 'application/json'
