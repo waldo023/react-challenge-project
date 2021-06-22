@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useSelector } from 'react';
 import { SERVER_IP } from '../../private';
 import './orderform.css';
 
@@ -10,6 +10,8 @@ function OrderForm(props) {
 
     const menuItemChosen = (event) => setOrderItem(event.target.value);
     const menuQuantityChosen = (event) => setQuantity(event.target.value);
+
+    const auth = useSelector(state => state.auth);
 
     const submitOrder = (event) => {
         event.preventDefault();
