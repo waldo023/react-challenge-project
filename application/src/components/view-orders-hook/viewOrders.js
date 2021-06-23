@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Template } from '../../components';
 import { SERVER_IP } from '../../private';
 import './viewOrders.css';
