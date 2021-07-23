@@ -52,8 +52,8 @@ class OrderForm extends Component {
                 <div className="form-wrapper">
                     <form>
                         <label className="form-label">I'd like to order...</label><br />
-                        <select 
-                            value={this.state.order_item} 
+                        <select
+                            value={this.state.order_item}
                             onChange={(event) => this.menuItemChosen(event)}
                             className="menu-select"
                         >
