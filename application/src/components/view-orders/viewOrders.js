@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Template } from '../../components';
+import { connect } from 'react-redux';
 import { SERVER_IP } from '../../private';
 import './viewOrders.css';
+
 
 class ViewOrders extends Component {
     state = {
