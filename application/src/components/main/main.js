@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './main.css';
 
 const mapStateToProps = state => ({
-  temp: state.temp
+  temp: state.temp,
 });
 
 class Main extends Component {
