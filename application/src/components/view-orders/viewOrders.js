@@ -26,6 +26,9 @@ class ViewOrders extends Component {
                 <div className="container-fluid">
                     {this.state.orders.map(order => {
                         const createdDate = new Date(order.createdAt);
+                        const hours = createdDate.getHours();
+                        const minutes = createdDate.getMinutes();
+                        const seconds = createdDate.getSeconds();
                         return (
                             <div className="row view-order-container" key={order._id}>
                                 <div className="col-md-4 view-order-left-col p-3">
@@ -33,7 +36,7 @@ class ViewOrders extends Component {
                                     <p>Ordered by: {order.ordered_by || ''}</p>
                                 </div>
                                 <div className="col-md-4 d-flex view-order-middle-col">
-                                    <p>Order placed at {`${createdDate.getHours()}:${createdDate.getMinutes()}:${createdDate.getSeconds()}`}</p>
+                                    <p>Order placed at {`${hours<10? '0'+hours:hours}:${minutes<10? '0'+minutes:minutes}:${seconds<10? '0'+seconds:seconds}`}</p>
                                     <p>Quantity: {order.quantity}</p>
                                  </div>
                                  <div className="col-md-4 view-order-right-col">
